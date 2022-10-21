@@ -10,9 +10,7 @@ const Navbar = (props) =>{
         <li> <a href="nav3"> {props.nav3}</a></li>
         <CartWidget />
         
-    </ul>    
-
-    
+    </ul>        
     
    </div>
 }
