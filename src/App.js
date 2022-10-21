@@ -7,19 +7,14 @@ import { ItemListContainer } from './components/ItemListContainer';
 function App() {
   return (
     <div className="App">
-      <header>
-        
+      <header>        
         <div>
-          <Navbar titulo="Grow El Cañaveral" nav1="Iluminacion" nav2="Accesorios" nav3="Sustratos" carrito=""/>
-          
-        </div>
-        
-        
-        
+          <Navbar titulo="Grow El Cañaveral" nav1="Iluminacion" nav2="Accesorios" nav3="Sustratos" carrito=""/>          
+        </div>              
       </header>
 
       <main>        
-        <ItemListContainer />
+        <ItemListContainer producto1="Nitrogeno" producto2="Kit Herramientas" producto3="Maceta de 5lt" precios="$1000"/>
       </main>
 
       <footer className='piedepagina'>
