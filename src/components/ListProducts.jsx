@@ -1,51 +1,25 @@
+import React from 'react'
 //import { useEffect, useState } from "react";
 //import imgFertilizante from '../assets/images/grow_fertilizantes.jpg';
 //import imgHerramienta from '../assets/images/grow_herramientas.jpg';
 //import imgMaceta from '../assets/images/grow_macetas.jpg';
+import ItemProduct from "./ItemProduct"
 
 //const [productos,setProductos]= useState([]);
+
+
 const ListProducts = () => {
     
-    
+  return (
 
-    const arrayProductos= [
-  
-        {
-          nombre:"Nitrox",
-          precio:1500,
-          descripcion:"Nitrogreno",
-          tag:"nitrogeno",
-          imagen:"url"
-        },
-        {
-          nombre:"GrowTech",
-          precio:4300,
-          descripcion:"kit herramientas",
-          tag:"",
-          imagen:"url",
-        },
-        {
-          nombre:"Rocket",
-          precio:1000,
-          descripcion:"Macetas 5lts",
-          tag:"",
-          imagen:"url",
-        },
-        
-      ];   
-      
-     
-      
     
-    return(
-        <div>
-          {arrayProductos.map(
-          (prod,index) => <h2 key={index}> {prod.nombre}</h2>
-                          
-          )}
-        </div>
-        )
+      <ItemProduct />
+    
+                   
       
+   
+   
+  )
     
   
 }

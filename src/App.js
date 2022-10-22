@@ -1,8 +1,11 @@
 import React from 'react';
-import './App.scss';
+
 import Navbar from './components/NavBar';
-import { ItemListContainer } from './components/ItemListContainer';
-import ItemProduct from './components/ItemProduct'
+import ItemListContainer from './components/ItemListContainer';
+import './App.scss';
+
+import ItemProduct from "./components/ItemProduct";
+
 
 function App() {
   return (
@@ -14,9 +17,9 @@ function App() {
       </header>
 
       <main>        
-        < ItemProduct/>
+        
         <ItemListContainer />
-
+        
       </main>
 
       <footer className='piedepagina'>

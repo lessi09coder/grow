@@ -6,21 +6,15 @@ import React from 'react'
 import ListProducts from './ListProducts'
 
 
-export const ItemListContainer = () => {
-  return (
-    <div className='categorias'>
-           
-        
-        <ListProducts />
-       
-
-
-    </div>
+const ItemListContainer = () => {
+  return (   
+      
+      <ListProducts />   
    
   )
 }
 
-
+export default ItemListContainer
 
 
 
