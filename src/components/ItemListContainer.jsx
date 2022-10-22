@@ -1,16 +1,30 @@
 import React from 'react'
 
-import imgFertilizante from '../assets/images/grow_fertilizantes.jpg';
-import imgHerramienta from '../assets/images/grow_herramientas.jpg';
-import imgMaceta from '../assets/images/grow_macetas.jpg';
+
 //luego vamos a import desde image.js y con las prop las traemos ejemplo "images.img1"
 
+import ListProducts from './ListProducts'
 
 
-export const ItemListContainer = (greetings) => {
+export const ItemListContainer = () => {
   return (
     <div className='categorias'>
+           
+        
+        <ListProducts />
        
+
+
+    </div>
+   
+  )
+}
+
+
+
+
+
+/*  
         <div>
           <h2>{greetings.producto1}</h2>            
             <span>{greetings.precios}</span>
@@ -26,9 +40,4 @@ export const ItemListContainer = (greetings) => {
             <span>{greetings.precios}</span>
             <img src={imgMaceta}  alt="" />
         </div>
-
-
-    </div>
-   
-  )
-}
+*/

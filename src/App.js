@@ -2,7 +2,7 @@ import React from 'react';
 import './App.scss';
 import Navbar from './components/NavBar';
 import { ItemListContainer } from './components/ItemListContainer';
-
+import ItemProduct from './components/ItemProduct'
 
 function App() {
   return (
@@ -14,7 +14,9 @@ function App() {
       </header>
 
       <main>        
-        <ItemListContainer producto1="Nitrogeno" producto2="Kit Herramientas" producto3="Maceta de 5lt" precios="$1000"/>
+        < ItemProduct/>
+        <ItemListContainer />
+
       </main>
 
       <footer className='piedepagina'>
