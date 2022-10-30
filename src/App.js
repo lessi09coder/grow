@@ -1,30 +1,21 @@
 import React from 'react';
-
-import Navbar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
 import './App.scss';
-
-
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import { Home } from './pages/Home';
+import { Category } from './pages/Category';
 
 
 function App() {
   return (
     <div className="App">
-      <header>        
-        <div>
-          <Navbar titulo="Grow El Cañaveral" nav1="Iluminacion" nav2="Accesorios" nav3="Sustratos" carrito=""/>          
-        </div>              
-      </header>
-
-      <main>        
-        
-        <ItemListContainer />
-        
-      </main>
-
-      <footer className='piedepagina'>
-        <h3 className=''>Politica de privacidad</h3>
-      </footer>
+      < BrowserRouter>
+        <Routes>
+          <Route path={"/"} element={<Home/>} />
+          <Route path={"/category/:categoryId"} element={<Category/>} />
+        </Routes>
+    
+      </BrowserRouter>
+      
     </div>
   );
 }

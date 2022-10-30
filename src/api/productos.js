@@ -10,6 +10,7 @@ const arrayProductos= [
     {
         id: 0,
         nombre:"Nitrox",
+        categoria:"fertilizante",
         precio:1500,
         descripcion:"Nitrogreno",
         tag:"",
@@ -18,6 +19,7 @@ const arrayProductos= [
     {
         id: 1,
         nombre:"GrowTech",
+        categoria:"herramientas",
         precio:4300,
         descripcion:"Kit herramientas",
         tag:"",
@@ -26,6 +28,7 @@ const arrayProductos= [
     {
         id: 2,
         nombre:"Rocket",
+        categoria:"macetas",
         precio:1000,
         descripcion:"Macetas 5lts",
         tag:"",
@@ -34,9 +37,12 @@ const arrayProductos= [
     
   ];   
 
-export const getProductos = () => 
+export const getProductos = (categoria) => 
   new Promise((res , rej) => {
+    const response = categoria
+    ? arrayProductos.filter((p) => p.categoria === categoria) : arrayProductos;
+    console.log({response})  
     setTimeout(()=> {
-        res(arrayProductos)
+        res(response)
     }, 1500)
   });
