@@ -4,7 +4,7 @@ import Navbar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import './App.scss';
 
-import ItemProduct from "./components/ItemProduct";
+
 
 
 function App() {

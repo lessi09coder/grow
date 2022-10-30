@@ -4,22 +4,24 @@
   box-sizing: border-box;
 };
 
-.paletaDeColores{
-  color: #212121;
-  color: #6D9886;
-  color: #D9CAB3;
-  color: #F6F6F6;
+
+.paletaDeColores2{
+  color: #F3C892;
+  color: #FFF1BD;
+  color: #A3DA8D;
+  color: #146356;
 }
+
 .App {
   //text-align: center;
-  background-color: #6D9886
+  background-color: #146356;  
 };
 
 
         // ***** NAVBAR ***** //
 
 .navbar{
-  background-color: #D9CAB3;
+  background-color: #A3DA8D;
   color: black;
   min-height: 120px;
   padding: 0 25px;
@@ -35,12 +37,12 @@
   
     & a{
       text-decoration: none;
-      color: #212121;
+      color: #146356;
       font-size: 1.5rem;
       padding: 5px;
 
       &:hover{
-        color: #6D9886;
+        color: #FFF1BD;
       }
     }  
 
@@ -63,6 +65,10 @@
 };
         // ***** MAIN ***** //
 
+main{  
+  min-height: 100vh;         
+}
+
 .categorias{
   display: flex;
   flex-wrap: wrap;
@@ -70,12 +76,44 @@
   justify-content: space-around;
   margin: 20px 0;
 
+  .card {
+    
+    & .card__top{
+      position: relative;
+      overflow: hidden;
+      border-radius: 50%;
+        & img{
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 50%;
+        overflow: hidden;
+        
+          &:hover{      
+          transition: 1s;      
+          scale:1.2;                  
+          }     
+        }
+
+        & h3{
+        z-index: 100;
+        color: white;
+        background: rgba(0, 0, 0, 0.4);
+        box-shadow: black 5px 5px 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50% );          
+        }      
+    }
+  }    
+  }
  /* & div{
     display: flex;
     flex-direction: column;  
     min-width: 300px;
     position: relative; 
-    overflow: hidden;
+    
     border-radius: 50%; 
   }*/
   /*
@@ -92,29 +130,15 @@
       cursor: pointer;
     }       
   } 
-  & div span{
-    top: 80%;
-    font-size: 2rem;
-  }*/
-  & div img{    
-    width: 300px;
-    height: 300px;
-    object-fit: cover;       
-    
-    &:hover{      
-      transition: 1s;      
-      scale:1.2;    
-          
-     }      
-   
-  }
-}
+  */
+ 
+
 
         // ***** FOOTER ***** //
 .piedepagina{
   text-align: center;
-  background-color: #212121;
-  color: #F6F6F6;
+  background-color: #A3DA8D;
+  color: black;   
 }
 
 
