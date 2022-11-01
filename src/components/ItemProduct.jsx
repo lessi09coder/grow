@@ -20,6 +20,7 @@ const ItemProduct = () => {
             nombre={producto.nombre}
             descripcion ={producto.descripcion}
             tag={producto.tag}
+            id={producto.id}
             precio={producto.precio}
             imagen={producto.imagen}/>
           })}

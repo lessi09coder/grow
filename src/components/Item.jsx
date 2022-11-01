@@ -1,5 +1,9 @@
+import { useNavigate } from "react-router-dom";
+
+
 const Item = (props) => {
-    return ( <div className="card">
+    const navigate = useNavigate();
+    return ( <div className="card" onClick={()=> navigate(`/product/${props.id}`)}>
         <div className="card__top">
             <img src={props.imagen} alt="productoavender" />
             <h3>{props.precio} </h3>

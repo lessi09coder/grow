@@ -10,7 +10,7 @@ const arrayProductos= [
     {
         id: 0,
         nombre:"Nitrox",
-        categoria:"fertilizante",
+        categoria:"fertilizantes",
         precio:1500,
         descripcion:"Nitrogreno",
         tag:"",
@@ -41,6 +41,16 @@ export const getProductos = (categoria) =>
   new Promise((res , rej) => {
     const response = categoria
     ? arrayProductos.filter((p) => p.categoria === categoria) : arrayProductos;
+    console.log({response})  
+    setTimeout(()=> {
+        res(response)
+    }, 1500)
+  });
+
+  export const getProductoId = (productId) => 
+  new Promise((res , rej) => {
+    const response = arrayProductos.find((p)=> p.id === +productId)
+    console.log(productId)    
     console.log({response})  
     setTimeout(()=> {
         res(response)

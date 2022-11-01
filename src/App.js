@@ -3,6 +3,7 @@ import './App.scss';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { Category } from './pages/Category';
+import { Detail } from './pages/Detail';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path={"/"} element={<Home/>} />
           <Route path={"/category/:categoryId"} element={<Category/>} />
+          <Route path={"/product/:productId"} element={<Detail/>} />
         </Routes>
     
       </BrowserRouter>
