@@ -6,7 +6,7 @@ const Item = (props) => {
     return ( <div className="card" onClick={()=> navigate(`/product/${props.id}`)}>
         <div className="card__top">
             <img src={props.imagen} alt="productoavender" />
-            <h3>{props.precio} </h3>
+            <h3>${props.precio} </h3>
         </div>
         <div className="card__bottom">
             <h2>{props.nombre} </h2>

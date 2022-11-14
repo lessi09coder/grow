@@ -36,7 +36,7 @@ export default Navbar
 
 
 
-{/* <span className="navbar__titulo"> {props.titulo} </span>
+/* <span className="navbar__titulo"> {props.titulo} </span>
 <ul>
     <li> <a href="nav1"> {props.nav1}</a></li>
     <li> <a href="nav2"> {props.nav2}</a></li>
@@ -45,4 +45,4 @@ export default Navbar
     
 </ul>        
 
-</div> */}
+</div> */
