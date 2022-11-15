@@ -4,13 +4,13 @@ import { Home } from './pages/Home';
 import { Category } from './pages/Category';
 import { Detail } from './pages/Detail';
 import { Cart } from './pages/Cart';
-import { CartContext } from './context/CartContext';
+import { CartProvider } from './context/CartContext';
 
 
 function App() {
   return (
     <div className="App">
-      <CartContext.Provider value={[]}>
+      <CartProvider value={[]}>
         < BrowserRouter>
           <Routes>
             <Route path={"/"} element={<Home />} />
@@ -19,7 +19,7 @@ function App() {
             <Route path={"/carrito"} element={<Cart />} />
           </Routes>
         </BrowserRouter>
-      </CartContext.Provider>
+      </CartProvider>
     </div>
   );
 }

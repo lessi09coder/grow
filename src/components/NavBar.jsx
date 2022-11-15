@@ -1,5 +1,7 @@
 import CartWidget from './CartWidget'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { useCartContext } from '../context/CartContext';
+
 
 const links = [
     { href: "/category/fertilizantes", label: "Fertilizante" },
@@ -11,6 +13,7 @@ const links = [
 const Navbar = () => {
     const navigate = useNavigate();
 
+    const {carro} = useCartContext();    
 
     return (
         <header>
@@ -22,7 +25,7 @@ const Navbar = () => {
                         </NavLink> </li>
                     }
                     )}
-                    <li><CartWidget /></li>
+                    <li> <Link to="/carrito"> <CartWidget />{" "}<span> {carro.length} </span> </Link> </li>
                 </ul>
             </div>
 
