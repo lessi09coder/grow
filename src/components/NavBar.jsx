@@ -1,6 +1,7 @@
 import CartWidget from './CartWidget'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useCartContext } from '../context/CartContext';
+import React from 'react';
 
 
 const links = [
@@ -13,24 +14,29 @@ const links = [
 const Navbar = () => {
     const navigate = useNavigate();
 
-    const {carro} = useCartContext();    
-
+    const { carro } = useCartContext();
+    //console.log({carro}) 
     return (
         <header>
             <div className="navbar" ><h2 className='navbar__titulo' onClick={() => navigate("/")}>GrowShop El Cañaveral</h2>
                 <ul>
-                    {links.map(({ label, href }) => {
-                        return <li> <NavLink to={href} key={label}>
-                            {label}
-                        </NavLink> </li>
+                    {links.map(({ label, href }) => {                
+                        return <React.Fragment key={label}>
+                            <li>
+                                <NavLink to={href} >
+                                    {label}
+                                </NavLink>
+                            </li>
+                        </React.Fragment>
                     }
                     )}
-                    <li> <Link to="/carrito"> <CartWidget />{" "}<span> {carro.length} </span> </Link> </li>
+                    <li> <Link to="/carrito" key="carrito"> <CartWidget />{" "}<span> {carro.length} </span> </Link> </li>
                 </ul>
             </div>
 
 
         </header>
+    
     )
 }
 

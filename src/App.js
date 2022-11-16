@@ -13,7 +13,7 @@ function App() {
       <CartProvider value={[]}>
         < BrowserRouter>
           <Routes>
-            <Route path={"/"} element={<Home />} />
+            <Route index element={<Home />} />
             <Route path={"/category/:categoryId"} element={<Category />} />
             <Route path={"/product/:productId"} element={<Detail />} />
             <Route path={"/carrito"} element={<Cart />} />

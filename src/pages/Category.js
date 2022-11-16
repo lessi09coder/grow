@@ -29,7 +29,9 @@ export const Category = () => {
                         tag={producto.tag}
                         id={producto.id}
                         precio={producto.precio}
-                        imagen={producto.imagen} />
+                        imagen={producto.imagen}
+                        key={producto.id}
+                    />
                 })}
             </div>
         </UserLayout>
@@ -59,8 +61,8 @@ import ItemListContainer from '../components/ItemListContainer'; */
 
 
 
-/* <UserLayout>    
-        <ItemListContainer/>    
+/* <UserLayout>
+        <ItemListContainer/>
         </UserLayout> */
 
 //export default ItemProduct;

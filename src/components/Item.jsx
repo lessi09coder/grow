@@ -1,26 +1,27 @@
 import { useNavigate } from "react-router-dom";
 import { useCartContext } from "../context/CartContext";
 
-const Item = (props) => {
-    const navigate = useNavigate(); 
-    
-    const {addProductCart} = useCartContext
+const Item = ({ id, precio, imagen, nombre, categoria, tag, descripcion, stock }) => {
+    const navigate = useNavigate();
 
-    return (<div className="card" onClick={() => navigate(`/product/${props.id}`)}>
+    const { addProductCart } = useCartContext();
+
+    return (<div className="card" onClick={() => navigate(`/product/${id}`)}>
         <div className="card__top">
-            <img src={props.imagen} alt="productoavender" />
-            <h3>${props.precio} </h3>
+            <img src={imagen} alt="productoavender" />
+            <h3>${precio} </h3>
         </div>
         <div className="card__bottom">
-            <h2>{props.nombre} </h2>
-            <span>{props.descripcion} </span>
-            <span>{props.tag} </span>
-            
+            <h2>{nombre} </h2>
+            <span>{descripcion} </span>
+            <span>{tag} </span>
+            <span>DISPONIBLES: {stock} </span>
+
             <button onClick={(e) => {
                 e.stopPropagation();
-                addProductCart(props)
+                addProductCart({ id, nombre, precio })
             }}>AGREGAR AL CARRITO</button>
-            
+
         </div>
     </div>)
 }

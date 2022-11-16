@@ -2,10 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-};
+}
+
+;
 
 
-.paletaDeColores2{
+.paletaDeColores2 {
   color: #F3C892;
   color: #FFF1BD;
   color: #A3DA8D;
@@ -14,13 +16,15 @@
 
 .App {
   //text-align: center;
-  background-color: #146356;  
-};
+  background-color: #146356;
+}
+
+;
 
 
-        // ***** NAVBAR ***** //
+// ***** NAVBAR ***** //
 
-.navbar{
+.navbar {
   background-color: #A3DA8D;
   color: black;
   min-height: 120px;
@@ -29,34 +33,34 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  
-  ul li{
-  display: inline-block;
-  padding: 15px;
-  list-style: none;    
 
-    & a{
+  ul li {
+    display: inline-block;
+    padding: 15px;
+    list-style: none;
+
+    &:hover a {
+      color: #FFF1BD;
+    }
+
+    & a {
       text-decoration: none;
       color: #146356;
       font-size: 1.5rem;
       padding: 5px;
 
-      &:hover{
-        color: #FFF1BD;
-      }
-      
     }
-    
 
-    &:hover{      
+
+    &:hover {
       transition: all 0.3s;
       transform: scale(1.2);
-      box-shadow: 5px 3px 10px;  
-      border-radius: 5px;      
+      box-shadow: 5px 3px 10px;
+      border-radius: 5px;
     }
   }
 
-  &__titulo{
+  &__titulo {
     margin-right: auto;
     background-color: #212121;
     padding: 5px;
@@ -65,14 +69,18 @@
     font-size: 1.5rem;
     cursor: pointer;
   }
-};
-        // ***** MAIN ***** //
-
-main{  
-  min-height: 100vh;         
 }
 
-.categorias{
+;
+
+
+// ***** MAIN ***** //
+
+main {
+  min-height: 100vh;
+}
+
+.categorias {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
@@ -80,25 +88,30 @@ main{
   margin: 20px 0;
 
   .card {
+    margin: 10px;
     cursor: pointer;
-    & .card__top{
+    background: #fff1bd48;
+    border-radius: 0 150px;
+
+    & .card__top {
       position: relative;
       overflow: hidden;
       border-radius: 50%;
-        & img{
+
+      & img {
         width: 300px;
         height: 300px;
         object-fit: cover;
         border-radius: 50%;
         overflow: hidden;
-        
-          &:hover{      
-          transition: 1s;      
-          scale:1.2;                  
-          }     
-        }
 
-        & h3{
+        &:hover {
+          transition: 1s;
+          scale: 1.2;
+        }
+      }
+
+      & h3 {
         z-index: 100;
         color: white;
         background: rgba(0, 0, 0, 0.4);
@@ -106,12 +119,56 @@ main{
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50% );          
-        }      
+        transform: translate(-50%, -50%);
+      }
     }
-  }    
+
+    & .card__bottom {
+      display: flex;
+      flex-direction: column;
+
+      & button {
+        background-color: #A3DA8D;
+        padding: 5px;
+        cursor: pointer;
+
+        &:hover {
+          transition: 0.5s;
+          scale: 1.1;
+          background-color: #FFF1BD;
+        }
+      }
+    }
   }
- /* & div{
+}
+
+.contenedor__boton {
+  & button{
+    margin: 10px;
+    background-color: #A3DA8D;
+    padding: 5px;
+  }
+
+  & span{
+    display: inline-block;
+    background: #F3C892;
+    padding: 2px;
+    border: solid black 2px;
+    border-radius: 5px;
+  }
+  
+  
+
+}
+
+
+.Loading {
+  display: flex;
+  justify-content: space-between;
+  font-size: 4rem;
+}
+
+/* & div{
     display: flex;
     flex-direction: column;  
     min-width: 300px;
@@ -119,7 +176,7 @@ main{
     
     border-radius: 50%; 
   }*/
-  /*
+/*
   & div h2,& div span{
     z-index: 100;
     color: white;
@@ -134,17 +191,12 @@ main{
     }       
   } 
   */
- 
 
 
-        // ***** FOOTER ***** //
-.piedepagina{
+
+// ***** FOOTER ***** //
+.piedepagina {
   text-align: center;
   background-color: #A3DA8D;
-  color: black;   
+  color: black;
 }
-
-
-
-
-

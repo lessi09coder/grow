@@ -3,7 +3,8 @@ import { useState } from "react";
 import  Boton from "./Boton";
 
 export const Counter = ({stock, onAddCart}) => {
-    const [contador, setContador] = useState(0);
+    
+    const [contador, setContador] = useState(1);
 
     const agregar = () => {
         //console.log("quiero sumar")
@@ -20,17 +21,17 @@ export const Counter = ({stock, onAddCart}) => {
     }
 
     useEffect(()=>{
-        console.log(stock)
+        //console.log(stock)
     })
+
     return (
-        <div>
+        <div className="contenedor__boton">
             <Boton onClick={() => agregar()}> SUMAR </Boton>            
             <span>{contador} </span>
             <Boton onClick={() => restar()}> RESTAR </Boton>
             <Boton onClick={()=> {
                 if(contador >= 1) // o podemos poner (contador) porque si es "0" es false
-               onAddCart()
-                
+               onAddCart(contador)                
             }}>Agregar al carrito</Boton>
         </div>
 

@@ -7,12 +7,17 @@ export const useCartContext = () => useContext(CartContext)
 
 export const CartProvider = ({ children }) => {
 
-    const [carro, setCarro] = useState([{item: "zapato"},{item: "zapato"}]);
+    const [carro, setCarro] = useState([]);
     
-    const addProductCart =  (item) => {
+    const addProductCart =  (item, qty) => {
+        console.log({item, qty})
+        //validar si el producto existe
+        //si no existe agregar al carrito
+        //si existe aumentar la cantidad
+
         setCarro([...carro, item])
     }
-    
+
     const value = {
         carro,
         addProductCart

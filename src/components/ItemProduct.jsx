@@ -26,7 +26,9 @@ const ItemProduct = () => {
           tag={producto.tag}
           id={producto.id}
           precio={producto.precio}
-          imagen={producto.imagen} />
+          imagen={producto.imagen}
+          stock={producto.stock} 
+          key={producto.id} />
       })}
     </div>
   )
