@@ -1,4 +1,4 @@
-import Item from './Item'
+import {Item} from './Item'
 import { useEffect, useState } from 'react';
 import { getProductos } from '../api/productos';
 //import { useParams } from 'react-router-dom';
@@ -8,7 +8,7 @@ const ItemProduct = () => {
   const [productos, setProductos] = useState([]);
   //tenemos que crear un useState(true) para el "cargando" de la web y luego que pase a false (crear el componente correspondiente)
   useEffect(() => {
-    setProductos([])
+    /* setProductos([]) */
     getProductos()
       .then(items => {
         setProductos(items)

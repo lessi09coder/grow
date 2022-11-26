@@ -4,9 +4,6 @@
   box-sizing: border-box;
 }
 
-;
-
-
 .paletaDeColores2 {
   color: #F3C892;
   color: #FFF1BD;
@@ -26,6 +23,7 @@
 
 .navbar {
   background-color: #A3DA8D;
+  z-index: 100;
   color: black;
   min-height: 120px;
   padding: 0 25px;
@@ -33,6 +31,7 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  box-shadow: black 0 5px 15px 0px;
 
   ul li {
     display: inline-block;
@@ -60,13 +59,8 @@
     }
   }
 
-  &__titulo {
+  &__logo {
     margin-right: auto;
-    background-color: #212121;
-    padding: 5px;
-    border-radius: 15px;
-    color: #F6F6F6;
-    font-size: 1.5rem;
     cursor: pointer;
   }
 }
@@ -77,7 +71,7 @@
 // ***** MAIN ***** //
 
 main {
-  min-height: 100vh;
+  min-height: 100vh;  
 }
 
 .categorias {
@@ -116,10 +110,13 @@ main {
         color: white;
         background: rgba(0, 0, 0, 0.4);
         box-shadow: black 5px 5px 10px;
+        border-radius: 3px;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        font-size: 2rem;
+        backdrop-filter:blur(5px);
       }
     }
 
@@ -142,23 +139,39 @@ main {
   }
 }
 
-.contenedor__boton {
-  & button{
+.count {
+  display: flex;  
+  flex-direction: column;
+  text-align: center;
+
+  & span{
+    font-size: 1.3rem;
+  }
+}
+
+.contenedor__boton { 
+  margin: 5px auto; 
+  
+  & button {
     margin: 10px;
     background-color: #A3DA8D;
     padding: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #FFF1BD
+    }
   }
 
-  & span{
-    display: inline-block;
-    background: #F3C892;
+  & span {
+    text-align: center;
+    margin: 5px;    
     padding: 2px;
+    font-size: 1.2rem;
+    background: #F3C892;
     border: solid black 2px;
-    border-radius: 5px;
+    border-radius: 50%;
   }
-  
-  
-
 }
 
 
@@ -168,35 +181,38 @@ main {
   font-size: 4rem;
 }
 
-/* & div{
-    display: flex;
-    flex-direction: column;  
-    min-width: 300px;
-    position: relative; 
-    
-    border-radius: 50%; 
-  }*/
-/*
-  & div h2,& div span{
-    z-index: 100;
-    color: white;
-    background: rgba(0, 0, 0, 0.4);
-    box-shadow: black 5px 5px 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50% ); 
-    &:hover{
-      cursor: pointer;
-    }       
-  } 
-  */
-
-
-
 // ***** FOOTER ***** //
 .piedepagina {
   text-align: center;
   background-color: #A3DA8D;
   color: black;
+  box-shadow: black 0 -5px 15px 0px;
+}
+
+
+
+
+// ******* CARRITO ******//
+
+.Cart {
+  display: block;
+  background-color: #FFF1BD;
+  padding: 15px;
+  
+
+  & th {
+    border: solid black 1px; 
+    padding: 2px;
+    font-size: 1.2rem; 
+  }
+}
+
+.Cart__cell {
+  background-color: #F3C892;  
+  text-align: center;  
+}
+
+.Cart__total {
+  font-size: 2rem;
+  font-weight: 800;
 }

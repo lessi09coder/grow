@@ -5,7 +5,6 @@ import { getProductoId } from "../api/productos";
 import { UserLayout } from "../components/UserLayout";
 import { Counter } from "../components/Counter";
 import { useCartContext } from "../context/CartContext";
-import Item from "../components/Item";
 
 export const Detail = () => {
     const { productId } = useParams();
@@ -32,7 +31,7 @@ export const Detail = () => {
             <div className="categorias">
                 <div className="card">
                     <div className="card__top">
-                        <img src={product.imagen} alt="" />
+                        <img src={product.imagen} alt="productoavender" />
                         <h3>{product.precio}</h3>
                     </div>
                     <div className="card__bottom">
@@ -40,9 +39,7 @@ export const Detail = () => {
                         <span>{product.descripcion} </span>
                     </div>
                 </div>
-
-                
-                {/*  desde item me trade el boton de agregar al carrito y se repite, en details precisamos el boton de COUNTER para agregar al cart
+                {/*  desde item me trae el boton de agregar al carrito y se repite, en details precisamos el boton de COUNTER para agregar al cart
                 
                 <Item
                     nombre={product.nombre}
@@ -54,8 +51,11 @@ export const Detail = () => {
                     stock={product.stock}
                     key={product.id}
                 /> */}
-            </div>           
-            <Counter stock={product?.stock} onAddCart={handleAdd} />
+            </div>
+            <div className="count">
+                <span>Disponibles: {product.stock} </span>
+                <Counter stock={product?.stock} onAddCart={handleAdd} />
+            </div>
         </UserLayout>
     )
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getProductosPorCategoria } from '../api/productos';
 import { useParams } from 'react-router-dom';
-import Item from '../components/Item';
+import { Item } from '../components/Item';
 import { UserLayout } from '../components/UserLayout';
 
 export const Category = () => {
@@ -14,6 +14,7 @@ export const Category = () => {
         getProductosPorCategoria(categoryId)
             .then(items => {
                 setProductos(items)
+                console.log({ items })
             }) //aca adentro va el usestate "cargando " pasando a false
             .catch(error => console.log(error))
 
@@ -31,38 +32,10 @@ export const Category = () => {
                         precio={producto.precio}
                         imagen={producto.imagen}
                         key={producto.id}
+                        stock={producto.stock}
                     />
                 })}
             </div>
         </UserLayout>
     )
 }
-
-
-
-
-
-
-
-
-
-/* import { UserLayout } from '../components/UserLayout';
-import ItemListContainer from '../components/ItemListContainer'; */
-
-
-
-/*useEffect(() => {
-    getProductos(categoryId)
-      .then(items => setProductos(items)) //aca adentro va el usestate "cargando " pasando a false
-      .catch(error => console.log(error))
-
-  }, [categoryId])*/
-
-
-
-
-/* <UserLayout>
-        <ItemListContainer/>
-        </UserLayout> */
-
-//export default ItemProduct;

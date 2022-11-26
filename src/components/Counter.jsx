@@ -1,10 +1,13 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import  Boton from "./Boton";
+import { useCartContext } from "../context/CartContext";
 
 export const Counter = ({stock, onAddCart}) => {
     
     const [contador, setContador] = useState(1);
+   
+    const { comparator } = useCartContext();
 
     const agregar = () => {
         //console.log("quiero sumar")
@@ -21,8 +24,10 @@ export const Counter = ({stock, onAddCart}) => {
     }
 
     useEffect(()=>{
-        //console.log(stock)
-    })
+       comparator()
+    }) 
+
+
 
     return (
         <div className="contenedor__boton">
