@@ -5,7 +5,7 @@ import Boton from "../components/Boton"
 import { addOrder } from "../api/orders";
 
 export const Cart = () => {
-    const { getTotalPrecio, carro , emptyCarro} = useCartContext();
+    const { getTotalPrecio, carro, emptyCarro } = useCartContext();
 
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
@@ -28,12 +28,12 @@ export const Cart = () => {
             itemsOrders,
             total: getTotalPrecio(),
         };
-        
+
         const id = await addOrder(order); //devuelve el ID y hace la orden de compra.
         console.log(id);
-        
+
         //addOrder(order); este no se usaria si usamos " id = await... ".
-        
+
         //luego de la compra, vaciamos el carrito:
         emptyCarro();
         //console.log({ order }) 
@@ -61,30 +61,28 @@ export const Cart = () => {
             </table>
 
             {/*Este es el formulario de compra pedido al cliente */}
-            <div style={{ display: "grid", gap: 10 }}>
-                <span>Nombre y Apellido</span>
+            <div className="forms" >
+                <span>Nombre y Apellido:</span>
                 <input
-                    style={{ border: "1px solid black", height: 40, width: 300 }}
                     onChange={(e) => setName(e.target.value)}
                 />
                 <span>Telefono:</span>
                 <input
-                    style={{ border: "1px solid black", height: 40, width: 300 }}
                     onChange={(e) => setPhone(e.target.value)}
                 />
                 <span>Email:</span>
                 <input
-                    style={{ border: "1px solid black", marginBottom: 15, height: 40, width: 300 }}
                     onChange={(e) => setEmail(e.target.value)}
                 />
                 <span>Reingrese su Email:</span>
                 <input
-                    style={{ border: "1px solid black", marginBottom: 15, height: 40, width: 300 }}
                     onChange={(e) => setEmail(e.target.value)}
                 />
             </div>
-            <Boton onClick={createOrder}>Comprar </Boton>
-            <Boton onClick={emptyCarro}>Vaciar carrito </Boton>
+            <div className="buttonOrder">
+                <Boton onClick={createOrder}>Comprar </Boton>
+                <Boton onClick={emptyCarro}>Vaciar carrito </Boton>
+            </div>
         </UserLayout>
     )
 }
