@@ -14,7 +14,7 @@ export const Category = () => {
         getProductosPorCategoria(categoryId)
             .then(items => {
                 setProductos(items)
-                console.log({ items })
+                //console.log({ items })
             }) //aca adentro va el usestate "cargando " pasando a false
             .catch(error => console.log(error))
 

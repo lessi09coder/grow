@@ -15,14 +15,14 @@ export const CartProvider = ({ children }) => {
     //console.log({ available })
 
 
-    const comparator = () => {
+    /* const comparator = () => {
         const newNotAvailable = carro.filter((item) => item.stock === item.qty)
         console.log(newNotAvailable)       
        
         /* if (item.stock === item.qty) {
             
-        } */
-    }
+        } 
+    } */
 
     //Remover productos de la lista del carrito:
     const removeProducto = (id) => {
@@ -32,31 +32,37 @@ export const CartProvider = ({ children }) => {
 
     //addProductCart recibe el item o producto que vamos agregar y la cantidad qty
     const addProductCart = (item, qty) => {
+        //console.log(item)
         //console.log({ item, qty })
+
         //validar si el producto existe
         //si no existe agregar al carrito
         //si existe aumentar la cantidad
         const element = carro.find((producto) => producto.id === item.id);
         if (!element) {
-            //Si el elemento producto no existe, entonces carro que no tiene nada se le agrega el ...item/items segun que cantidad qty
+            //Si el elemento producto no existe, entonces carro que no tiene nada se le agrega el ...item/items segun que cantidad qty tenga el counter
             setCarro([...carro, { ...item, qty }])
         } else {
             //y si existe entonces newCarro es el array de objetos que se le agrega un atributo qty: con la cantidad que pasamos en qty y se acumula
             const newCarro = carro.map((producto) => {
-                if (producto.id === item.id) {
-                    return { ...producto, qty: producto.qty + qty }
-                }
-                return producto
+                //aca vemos que mientras el producto coincida con el id del item, y no sobre pase el stock, se ejecuta la actualizacion del
+                
+                //if (producto.id === item.id && producto.stock > producto.qty) return { ...producto, qty: producto.qty + qty }; //esto anda bien, ya se puede borrar *
+
+                if (producto.id === item.id && producto.stock > producto.qty && (producto.qty + qty <= producto.stock)) return { ...producto, qty: producto.qty + qty };
+                return producto;
             });
-            setCarro(newCarro)
+
+
+            setCarro(newCarro);
         }
     }
     //Cantidad de productos en la lista del carrito:
     const getCarroQty = () => {
-        return carro.reduce((acc, item) => acc + item.qty, 0)
+        return carro.reduce((acc, item) => acc + item.qty, 0);
     }
     //El precio total de la compra:
-    const getTotalPrecio = () => carro.reduce((acc, item) => acc + item.precio * item.qty, 0)
+    const getTotalPrecio = () => carro.reduce((acc, item) => acc + item.precio * item.qty, 0);
 
     //Vaciar el carrito:
     const emptyCarro = () => setCarro([]);
@@ -68,7 +74,6 @@ export const CartProvider = ({ children }) => {
         getCarroQty,
         getTotalPrecio,
         emptyCarro,
-        comparator
     };
 
     return <CartContext.Provider value={value} displayName="carritoContexto"> {children} </CartContext.Provider>;

@@ -1,3 +1,48 @@
+# Mi projecto: Una app de un E-shop.
+
+Mi app esta desarrollada en React JS, simulando un E-shop con funcionalidad de compra incluyendo un carrito de compra con generador de ordenes de compra.
+
+Presenta los siguientes componentes principales:
+
+-Navbar
+-Catálogo
+-Detalle de producto
+-CartContext
+-CartWidget
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

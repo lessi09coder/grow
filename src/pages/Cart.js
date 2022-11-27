@@ -29,13 +29,15 @@ export const Cart = () => {
             total: getTotalPrecio(),
         };
         
-        const id = await addOrder(order)
-        /* addOrder(order);   para agregar la compra a firestone*/
+        const id = await addOrder(order); //devuelve el ID y hace la orden de compra.
+        console.log(id);
+        
+        //addOrder(order); este no se usaria si usamos " id = await... ".
         
         //luego de la compra, vaciamos el carrito:
         emptyCarro();
-        console.log({ order })
-        console.log({ itemsOrders })
+        //console.log({ order }) 
+        //console.log({ itemsOrders })
     }
 
     return (
@@ -60,17 +62,22 @@ export const Cart = () => {
 
             {/*Este es el formulario de compra pedido al cliente */}
             <div style={{ display: "grid", gap: 10 }}>
-                <span>Nombre</span>
+                <span>Nombre y Apellido</span>
                 <input
                     style={{ border: "1px solid black", height: 40, width: 300 }}
                     onChange={(e) => setName(e.target.value)}
                 />
-                <span>Telefono</span>
+                <span>Telefono:</span>
                 <input
                     style={{ border: "1px solid black", height: 40, width: 300 }}
                     onChange={(e) => setPhone(e.target.value)}
                 />
-                <span>Email</span>
+                <span>Email:</span>
+                <input
+                    style={{ border: "1px solid black", marginBottom: 15, height: 40, width: 300 }}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+                <span>Reingrese su Email:</span>
                 <input
                     style={{ border: "1px solid black", marginBottom: 15, height: 40, width: 300 }}
                     onChange={(e) => setEmail(e.target.value)}

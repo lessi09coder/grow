@@ -14,8 +14,8 @@ export const Detail = () => {
     //console.log(productId)
     //traemos "product" con el getProductoId (trae el objeto que coincide con su ID unica)
     useEffect(() => {
-        getProductoId(productId)
-            .then((data) => setProduct(data))
+        getProductoId(productId)            
+            .then((data) => setProduct(data))             
     }, [productId])
 
     const handleAdd = (qty) => {

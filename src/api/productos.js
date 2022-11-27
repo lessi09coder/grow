@@ -20,7 +20,7 @@ const productRef = collection(db, 'items') // primer parametro es recibe la base
 
 
 //Es una funcion asincrona para traer TODOS LOS PRODUCTOS de firebase.
-export const getProductos = async () => {  
+export const getProductos = async () => {
   const products = []
 
   const querySnapshot = await getDocs(productRef);
@@ -28,7 +28,8 @@ export const getProductos = async () => {
   querySnapshot.forEach((doc) => {
     //console.log(doc.id, " => ", doc.data());
     products.push({ ...doc.data(), id: doc.id })
-    //doc.data es todos los campos que tiene cada items    
+    //doc.data es todos los campos que tiene cada items 
+    //console.log(products)   
   });
 
   //console.log({products})
@@ -48,12 +49,23 @@ export const getProductosPorCategoria = async (categoria) => {
 //trae por producto de firebase
 export const getProductoId = async (ElIdDelProducto) => {
   const document = doc(db, "items", ElIdDelProducto) //doc recibe la base de datos, el nombre de la coleccion, y el id especifico de un documento.
-  const docSnap = await getDoc(document) // ele document que traemos es el que especificamos antes con el doc().
+  const docSnap = await getDoc(document) // el document que traemos es el que especificamos antes con el doc().
   if (docSnap.exists()) { //.exist es un metodo para saber si existe, devuelve t o f
     return { id: docSnap.id, ...docSnap.data() }
   }
   return null // por si no retorna nada
 }
+
+//ponemos actualizacion de productos?
+
+
+
+
+
+
+
+
+
 
 
 // ESTO ERA LO ANTERIOR =>..
@@ -99,9 +111,6 @@ const arrayProductos = [
   },
 
 ]; */
-
-
-
 
 
 /* export const getProductos = (categoria) =>
