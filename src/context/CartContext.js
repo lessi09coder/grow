@@ -7,22 +7,7 @@ export const useCartContext = () => useContext(CartContext)
 
 export const CartProvider = ({ children }) => {
 
-    const [carro, setCarro] = useState([]);
-
-
-    //para no poner productos mas que los disponibles, vamos a usar el un contexto:
-    // const [available, setAvailable] = useState(0);
-    //console.log({ available })
-
-
-    /* const comparator = () => {
-        const newNotAvailable = carro.filter((item) => item.stock === item.qty)
-        console.log(newNotAvailable)       
-       
-        /* if (item.stock === item.qty) {
-            
-        } 
-    } */
+    const [carro, setCarro] = useState([]);    
 
     //Remover productos de la lista del carrito:
     const removeProducto = (id) => {
