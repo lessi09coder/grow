@@ -92,7 +92,7 @@ export const Cart = () => {
                     <td>{product.nombre}</td><td>{product.descripcion}</td><td>${product.precio}</td><td>{product.qty}</td><td>${product.precio * product.qty}</td>
                 </tr>)}
 
-                <div className="Cart__total">TOTAL de compra: ${getTotalPrecio()}</div>
+                <div className="Cart__total">TOTAL de compras: ${getTotalPrecio()}</div>
             </table>
 
             {/*Este es el formulario de compra pedido al cliente */}
